@@ -1,0 +1,174 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(35, 229, 229); /* Aqua background color */
+    background: url('https://images.unsplash.com/photo-1517841905240-4729884b58b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGJhY2tncm91bmR8ZW58MHx8fHwxNjg1MTIzMTQ2&ixlib=rb-1.2.1&q=80&w=1920') no-repeat center center fixed; /* Background image */
+    background-size: cover; /* Cover the whole page */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: fadeIn 1s ease; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #fff; /* Title color */
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+}
+
+/* Input and button container */
+#inputdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+#inputdiv:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Input field */
+#i1 {
+    border: 2px solid #6c63ff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px;
+    transition: border-color 0.3s;
+}
+
+#i1:focus {
+    outline: none;
+    border-color: #3f3d56;
+}
+
+/* Add task button */
+#btn {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s, transform 0.2s; /* Add transform for button animation */
+}
+
+#btn:hover {
+    background-color: #5a54e8;
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Output div */
+#outputdiv {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+/* Task item styling */
+div > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
+    transition: transform 0.2s, background-color 0.2s; /* Animation for task items */
+}
+
+div > div:hover {
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 1); /* Full opacity on hover */
+}
+
+span {
+    flex-grow: 1;
+}
+
+.timestamp {
+    color: #888;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+/* Button styling for task actions */
+button {
+    background-color: #e7e7e7;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Add transform for button animation */
+}
+
+button:hover {
+    background-color: #d7d7d7;
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #inputdiv {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #i1 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #btn {
+        width: 100%;
+    }
+
+    #outputdiv {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #i1 {
+        font-size: 1rem;
+    }
+
+    #btn {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
+}
